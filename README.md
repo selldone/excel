@@ -1,4 +1,5 @@
-# Excel | Bulk import template files
+# Excel | Bulk Import Template Files
+
 Simplify Your Selldone Shop Experience with Free Excel Templates for Bulk Product Uploads
 
 Managing an online store can be a daunting task, especially when it comes to adding and updating a large number of products. To streamline this process for Selldone shop users, we have introduced a free Excel template files repository that simplifies bulk product uploads.
