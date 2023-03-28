@@ -17,6 +17,10 @@ To get started, simply download the appropriate template from our repository, fi
 the file. Next, upload the Excel file to your Selldone shop > Products (Drag & Drop), and watch as your products are automatically added or
 updated in your store.
 
+
+![Image description](doc/import_excel.gif)
+
+
 🎥 Youtube: https://youtu.be/fREaoivgq0g
 
 By using our free Excel templates for bulk product uploads, you can save valuable time and effort while ensuring that
