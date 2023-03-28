@@ -22,3 +22,21 @@ your Selldone shop is always up to date and ready to serve your customers.
 | File                             | Description                                                                                                                                            |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Wholesale with tiered prices** | Efficiently import numerous products with various pricing levels, establish minimum and maximum order constraints per cart, and upload product images. |
+
+
+<pre>
+⊂_ヽ
+　 ＼＼ SΞL
+　　 ＼(　ˇωˇ)L
+　　　 >　⌒ヽD
+　　　/ 　 へ＼Θ
+　　 /　　/　＼＼N
+　　 ﾚ　ノ　　 ヽ_つΞ
+　　/　/
+　 /　/|
+　(　(ヽ
+　|　|、＼
+　| 丿 ＼ ⌒)
+　| |　　) /
+`ノ )　　Lﾉ
+</pre>
