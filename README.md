@@ -13,13 +13,13 @@ in your Selldone shop. With clearly labeled fields for product details such as t
 you can easily organize and maintain your inventory.
 
 ## How use it?
+
 To get started, simply download the appropriate template from our repository, fill in your product information, and save
-the file. Next, upload the Excel file to your Selldone shop > Products (Drag & Drop), and watch as your products are automatically added or
+the file. Next, upload the Excel file to your Selldone shop > Products (Drag & Drop), and watch as your products are
+automatically added or
 updated in your store.
 
-
-![Image description](doc/import_excel.gif) 
-
+![Image description](doc/import_excel.gif)
 
 🎥 Youtube: https://youtu.be/fREaoivgq0g
 
@@ -28,12 +28,9 @@ your Selldone shop is always up to date and ready to serve your customers.
 
 ## List
 
-| File                                                                   | Description                                                                                                                                            |
-|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Wholesale with tiered prices** [Open](/Wholesale with tiered prices) | Efficiently import numerous products with various pricing levels, establish minimum and maximum order constraints per cart, and upload product images. |
-
-
-
+| File                             | Description                                                                                                                                            |
+|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Wholesale with tiered prices** | Efficiently import numerous products with various pricing levels, establish minimum and maximum order constraints per cart, and upload product images. |
 
 <pre>
 ⊂_ヽ
