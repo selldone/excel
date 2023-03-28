@@ -18,7 +18,7 @@ the file. Next, upload the Excel file to your Selldone shop > Products (Drag & D
 updated in your store.
 
 
-![Image description](doc/import_excel.gif)
+![Image description](doc/import_excel.gif) 
 
 
 🎥 Youtube: https://youtu.be/fREaoivgq0g
