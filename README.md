@@ -26,11 +26,36 @@ updated in your store.
 By using our free Excel templates for bulk product uploads, you can save valuable time and effort while ensuring that
 your Selldone shop is always up to date and ready to serve your customers.
 
+## Table
+
+| Column              | Description                                                                                                |
+|---------------------|------------------------------------------------------------------------------------------------------------|
+| Publish             | Product publish status (1 for published, 0 for unpublished). Provided by the seller, not used in Selldone. |
+| Status              | Product availability status (Open or Close).                                                               |
+| SKU                 | Stock keeping unit identifier.                                                                             |
+| Title               | Product title.                                                                                             |
+| Quantity            | Total product quantity.                                                                                    |
+| Extra               | Extra product details in JSON format.                                                                      |
+| Production Time     | Product production lead time.                                                                              |
+| Lead Time           | Product shipping lead time.                                                                                |
+| Type                | Product type (e.g., PHYSICAL).                                                                             |
+| Currency            | Product currency (e.g., USD).                                                                              |
+| Price               | Base product price.                                                                                        |
+| Limit Min           | Minimum order quantity limit.                                                                              |
+| Limit Max           | Maximum order quantity limit.                                                                              |
+| Price 1-6           | Tiered prices for different quantity ranges.                                                               |
+| Qty 1-6             | Quantity ranges for tiered pricing.                                                                        |
+| Category            | Product category.                                                                                          |
+| Content Description | Product description.                                                                                       |
+| Image               | Main product image URL.                                                                                    |
+| Images              | Additional product images URLs (comma-separated).                                                          |
+| Image Contain       | Image contain flag (TRUE or FALSE).                                                                        |
+
 ## List
 
-| File                             | Description                                                                                                                                            |
-|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Wholesale with tiered prices** | Efficiently import numerous products with various pricing levels, establish minimum and maximum order constraints per cart, and upload product images. |
+| File                                                                                                               | Description                                                                                                                                            |
+|--------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **[Wholesale with tiered prices](https://github.com/selldone/excel/tree/main/Wholesale%20with%20tiered%20prices)** | Efficiently import numerous products with various pricing levels, establish minimum and maximum order constraints per cart, and upload product images. |
 
 <pre>
 ⊂_ヽ
