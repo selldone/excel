@@ -203,7 +203,7 @@ Here's an example of how a row might look in your Excel file:
 By following this structure and guidelines, you will be able to prepare your Excel file for a successful import into
 Selldone.
 
-## List of Product Import Samples
+## List of Product Import Samples | Excel Files
 
 To help you get started with bulk importing products into Selldone, we've prepared a selection of Excel template files.
 Each template is designed for different use cases, whether you're importing simple products, products with variants, or
