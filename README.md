@@ -2,6 +2,9 @@
 
 _Simplify Your Selldone Shop Experience with Free Excel Templates for Bulk Product Uploads_
 
+## Use ChatGPT
+**[Click Here](/ChatGPT)** to get ready to use prompt.
+
 ## Why Bulk Import?
 
 Managing an online store can be a daunting task, especially when it comes to adding and updating a large number of
