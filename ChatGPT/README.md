@@ -10,19 +10,6 @@ What I Have:
 
 I have product data with the following columns:
 
-    Current Column Headers:
-        Product Name
-        Price
-        Stock
-        SKU
-        Description
-        Image URL
-        [Include any additional columns you have]
-
-Sample Data:
-Product Name	Price	Stock	SKU	Description	Image URL
-Blue Office Chair	$49.99	100	BOF-CHAIR	Comfortable chair...	http://example.com/image1.jpg
-Red Office Chair	$59.99	50	ROF-CHAIR	Stylish red chair...	http://example.com/image2.jpg
 
 What I Need:
 
@@ -105,21 +92,111 @@ What I Need:
             JSON Fields: Ensure fields like Spec, Pros, Cons contain valid JSON strings.
         For example, in my data, the Price column includes a dollar sign (e.g., '$49.99'). Please remove the dollar sign to make it a numeric value.
 
-    Exclude Unnecessary Columns:
+    Exclude Unnecessary Columns!
 
-        Exclude the following columns from the final data, as they cannot be imported into Selldone:
-            Visits
-            Rate
-            Rates Count
-            For Available
-            For Auction
-            Sells
-
-    (I don't have these columns, but mentioning just in case.)
 
     Provide Structure of Values:
         Ensure that each column contains data in the correct format and structure as required by Selldone.
         Modify the values if necessary to conform to Selldone's requirements.
+
+
+    Strucure of standard selldone Excel file for products:
+    
+| **Column Name**            | **Description**                                                                                                                                               | **Required** | **Relations/Notes**                                                                                              |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|------------------------------------------------------------------------------------------------------------------|
+| **Product ID**             | The unique identifier of the product in Selldone.                                                                                                             | Optional     | Used to update an existing product. If empty, a new product will be created.                                     |
+| **Variant ID**             | The unique identifier of the product variant.                                                                                                                 | Optional     | Used to update an existing variant. Applicable when **Type** is 'VARIANT'.                                       |
+| **Title**                  | The name of the product.                                                                                                                                      | **Required** |                                                                                                                  |
+| **Title En**               | The English name of the product.                                                                                                                              | Optional     | The standard name or technical name of the product in English.                                                   |
+| **Type**                   | The type of the product. It can be `PHYSICAL`, `VIRTUAL`, `FILE`, `SERVICE`, `SUBSCRIPTION`. Use 'VARIANT' for variants; otherwise, use a valid product type. | **Required** | 'VARIANT' indicates the row is a variant of the last product listed.                                             |
+| **Price**                  | The price of the product as a floating-point number, e.g., `10.99`.                                                                                           | **Required** | Customer Price = `Price` + `Commission` - `Discount`                                                             |
+| **Currency**               | The currency code of the price, e.g., 'USD', 'EUR', 'GBP'.                                                                                                    | **Required** |                                                                                                                  |
+| **Commission**             | The commission amount or percentage for the product.                                                                                                          | Optional     | Defaults to `0` if not provided.                                                                                 |
+| **Discount**               | The discount amount or percentage applied to the product.                                                                                                     | Optional     | Defaults to `0` if not provided.                                                                                 |
+| **Discount Start Date**    | The start date of the discount period.                                                                                                                        | Optional     | Format: `YYYY-MM-DD` or `YYYY-MM-DD HH:MM:SS`.                                                                   |
+| **Discount End Date**      | The end date of the discount period.                                                                                                                          | Optional     | Format: `YYYY-MM-DD` or `YYYY-MM-DD HH:MM:SS`.                                                                   |
+| **Status**                 | The availability status of the product, e.g., 'Open', 'Close'.                                                                                                | **Required** | 'Open' means available for sale; 'Close' means not available.                                                    |
+| **Quantity**               | The available stock quantity.                                                                                                                                 | Optional     | Defaults to `0` if not provided.                                                                                 |
+| **SKU**                    | The Stock Keeping Unit identifier. A unique code used to track inventory.                                                                                     | Optional     |                                                                                                                  |
+| **MPN**                    | The Manufacturer Part Number.                                                                                                                                 | Optional     |                                                                                                                  |
+| **GTIN**                   | The Global Trade Item Number.                                                                                                                                 | Optional     |                                                                                                                  |
+| **GPC**                    | The Global Product Classification code.                                                                                                                       | Optional     |                                                                                                                  |
+| **Condition**              | The condition of the product, e.g., 'New', 'Used', 'Refurbished'.                                                                                             | Optional     |                                                                                                                  |
+| **Brand**                  | The brand or manufacturer of the product.                                                                                                                     | Optional     |                                                                                                                  |
+| **Warranty**               | Warranty information, e.g., '1 Year Manufacturer Warranty'.                                                                                                   | Optional     |                                                                                                                  |
+| **Spec**                   | Specifications of the product in JSON format.                                                                                                                 | Optional     | Must be valid JSON (e.g., `{"Color":"Red","Size":"M"}`).                                                         |
+| **Spec Order**             | The display order of specifications in a JSON array.                                                                                                          | Optional     | Must be a valid array of `Spec` keys (e.g., `["Color","Size"]`).                                                 |
+| **Pros**                   | Advantages of the product in JSON format.                                                                                                                     | Optional     | Must be a valid JSON array (e.g., `["Lightweight","Durable"]`).                                                  |
+| **Cons**                   | Disadvantages of the product in JSON format.                                                                                                                  | Optional     | Must be a valid JSON array (e.g., `["Limited color options"]`).                                                  |
+| **Image**                  | The main image URL of the product.                                                                                                                            | **Required** |                                                                                                                  |
+| **Outputs**                | Output specifications in JSON format.                                                                                                                         | Optional     | Must be valid JSON.                                                                                              |
+| **Inputs**                 | Input specifications in JSON format.                                                                                                                          | Optional     | Must be valid JSON.                                                                                              |
+| **Content Title**          | Title of the product description content.                                                                                                                     | Optional     |                                                                                                                  |
+| **Content Body (Html)**    | HTML content describing the product in detail.                                                                                                                | Optional     |                                                                                                                  |
+| **Content Description**    | A brief description of the product content.                                                                                                                   | Optional     |                                                                                                                  |
+| **Content Image**          | URL of an image used in the content.                                                                                                                          | Optional     |                                                                                                                  |
+| **Content FAQ**            | Frequently Asked Questions in JSON format.                                                                                                                    | Optional     | Must be a valid JSON array.                                                                                      |
+| **Content Structure Data** | Structured data for SEO in JSON-LD format.                                                                                                                    | Optional     | Must be valid JSON-LD.                                                                                           |
+| **Category**               | The product category or categories.                                                                                                                           | Optional     | Should match existing categories in your Selldone account; otherwise, it will create the category automatically. |
+| **Lead Time**              | The number of days before the product is shipped (production or handling time).                                                                               | Optional     | Defaults to `-1` if not provided. `-1` indicates no lead time.                                                   |
+| **Extra**                  | Additional product details in JSON format, such as dimensions or weight.                                                                                      | Optional     | Must be valid JSON (e.g., `{"weight":50,"width":100,"length":200,"height":40}`).                                 |
+| **Image Contain**          | Indicates if the image should be contained within its container.                                                                                              | Optional     | Accepts `TRUE` or `FALSE`. Defaults to `FALSE`.                                                                  |
+| **Return Warranty**        | The return warranty period in days.                                                                                                                           | Optional     | Defaults to `0` if not provided.                                                                                 |
+| **Original**               | Indicates if the product is original or a replica.                                                                                                            | Optional     | Accepts `TRUE` or `FALSE`. Defaults to `TRUE`.                                                                   |
+| **Slug**                   | The URL-friendly version of the product name.                                                                                                                 | Optional     | If empty, it will be auto-generated from the **Title**.                                                          |
+| **Images**                 | Additional image URLs for the product, separated by commas.                                                                                                   | Optional     |                                                                                                                  |
+| **V_Color**                | Variant attribute: color.                                                                                                                                     | Optional     | Applicable when **Type** is 'VARIANT'.                                                                           |
+| **V_Style**                | Variant attribute: style.                                                                                                                                     | Optional     | Applicable when **Type** is 'VARIANT'.                                                                           |
+| **V_Volume**               | Variant attribute: volume.                                                                                                                                    | Optional     | Applicable when **Type** is 'VARIANT'.                                                                           |
+| **V_Weight**               | Variant attribute: weight.                                                                                                                                    | Optional     | Applicable when **Type** is 'VARIANT'.                                                                           |
+| **V_Pack**                 | Variant attribute: pack size or packaging.                                                                                                                    | Optional     | Applicable when **Type** is 'VARIANT'.                                                                           |
+| **V_Type**                 | Variant attribute: type or model.                                                                                                                             | Optional     | Applicable when **Type** is 'VARIANT'.                                                                           |
+| **Limit Min**              | The minimum quantity allowed per order.                                                                                                                       | Optional     | Defaults to `0` (no minimum limit).                                                                              |
+| **Limit Max**              | The maximum quantity allowed per order.                                                                                                                       | Optional     | Defaults to `0` (no maximum limit). Must be greater than or equal to **Limit Min** if provided.                  |
+| **Qty 1**                  | Minimum quantity for tiered pricing level 1.                                                                                                                  | Optional     | Used in conjunction with **Price 1** for bulk pricing.                                                           |
+| **Price 1**                | Price for tiered pricing level 1.                                                                                                                             | Optional     |                                                                                                                  |
+| **Qty 2**                  | Minimum quantity for tiered pricing level 2.                                                                                                                  | Optional     |                                                                                                                  |
+| **Price 2**                | Price for tiered pricing level 2.                                                                                                                             | Optional     |                                                                                                                  |
+| **Qty 3**                  | Minimum quantity for tiered pricing level 3.                                                                                                                  | Optional     |                                                                                                                  |
+| **Price 3**                | Price for tiered pricing level 3.                                                                                                                             | Optional     |                                                                                                                  |
+| **Qty 4**                  | Minimum quantity for tiered pricing level 4.                                                                                                                  | Optional     |                                                                                                                  |
+| **Price 4**                | Price for tiered pricing level 4.                                                                                                                             | Optional     |                                                                                                                  |
+| **Qty 5**                  | Minimum quantity for tiered pricing level 5.                                                                                                                  | Optional     |                                                                                                                  |
+| **Price 5**                | Price for tiered pricing level 5.                                                                                                                             | Optional     |                                                                                                                  |
+| **Qty 6**                  | Minimum quantity for tiered pricing level 6.                                                                                                                  | Optional     |                                                                                                                  |
+| **Price 6**                | Price for tiered pricing level 6.                                                                                                                             | Optional     |                                                                                                                  |
+| **Qty 7**                  | Minimum quantity for tiered pricing level 7.                                                                                                                  | Optional     |                                                                                                                  |
+| **Price 7**                | Price for tiered pricing level 7.                                                                                                                             | Optional     |                                                                                                                  |
+| **Qty 8**                  | Minimum quantity for tiered pricing level 8.                                                                                                                  | Optional     |                                                                                                                  |
+| **Price 8**                | Price for tiered pricing level 8.                                                                                                                             | Optional     |                                                                                                                  |
+| **Qty 9**                  | Minimum quantity for tiered pricing level 9.                                                                                                                  | Optional     |                                                                                                                  |
+| **Price 9**                | Price for tiered pricing level 9.                                                                                                                             | Optional     |                                                                                                                  |
+| **Qty 10**                 | Minimum quantity for tiered pricing level 10.                                                                                                                 | Optional     |                                                                                                                  |
+| **Price 10**               | Price for tiered pricing level 10.                                                                                                                            | Optional     |                                                                                                                  |
+| **Price Label**            | A label or description for the price, e.g., 'per unit', 'per kg'.                                                                                             | Optional     |                                                                                                                  |
+| **Unit**                   | The unit of measurement for the product, e.g., 'kg', 'liters', 'pcs'.                                                                                         | Optional     |                                                                                                                  |
+| **Price Input**            | Indicates the type of price input, e.g., 'DEFAULT', 'CUSTOM'.                                                                                                 | Optional     | Use predefined constants or values accepted by Selldone.                                                         |
+| **Valuation ID**           | The ID of the valuation method associated with the product.                                                                                                   | Optional     | Must correspond to a valid valuation ID in your Selldone account.                                                |
+
+
+Notes and Guidelines
+    First Row: Represents a product with detailed information.
+    Second Row: Represents a variant of the product above.
+    Fields like Spec, Spec Order, Pros, Cons, Extra, and Content Body (Html) contain JSON or HTML data. Ensure that these are properly formatted in your Excel file.
+    The Images field contains multiple image URLs separated by commas.
+    Boolean Fields like Image Contain and Original should be either TRUE or FALSE.
+    Date Fields should be in the format YYYY-MM-DD HH:MM:SS.
+    JSON Fields: Columns like Spec, Pros, Cons, Outputs, Inputs, Content FAQ, and Content Structure Data must contain valid JSON strings.
+    Date Formats: Use the YYYY-MM-DD format for all date fields to ensure proper parsing.
+    Boolean Fields: For fields like Image Contain and Original, use true or false.
+    Numeric Fields: Ensure numeric fields like Price, Commission, Discount, Quantity, Return Warranty, Limit Min, and Limit Max contain valid numbers.
+    Variant Rows: When Type is 'VARIANT', the row represents a variant of the last product defined in the spreadsheet. All variant attributes (V_Color, V_Style, etc.) are applicable in this case.
+    Tiered Pricing: To offer bulk pricing, use Qty X and Price X columns. For example, if Qty 1 is 10 and Price 1 is 9.99, customers buying 10 or more units get the product at $9.99 each.
+    Images: Multiple image URLs in the Images column should be separated by commas without spaces.
+    Categories and Brands: Ensure that the values provided for Category and Brand match exactly with those defined in your Selldone account to prevent mismatches.
+    Updating Products: If you provide a Product ID (and Variant ID for variants), the system will attempt to update the existing product or variant. If these are left empty, new entries will be created.
+    Limits: If Limit Max is provided, it must be greater than Limit Min. If Limit Max is 0, it signifies no maximum limit.
+
 
 Example Transformation:
 
